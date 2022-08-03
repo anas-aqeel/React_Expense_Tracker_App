@@ -11,7 +11,7 @@ const Transactions = () => {
     <div className='tx_log_div'>
       {[12, 2].map((e) =>
        (
-        <>
+        <div key={e}>
           <Tx_Item
             title='Market'
             desc='Hi I am Going To Market as a in as a'
@@ -35,7 +35,7 @@ const Transactions = () => {
             val={1200}
             _class='income'
           />
-        </>
+        </div>
 
       ) 
       )}

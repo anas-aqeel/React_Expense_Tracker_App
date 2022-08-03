@@ -1,4 +1,5 @@
 .tx_logs_div {
+    position: relative;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 29px 0px !important;
     padding: 10px;
     height: 75vh;
@@ -21,7 +22,7 @@
 .tx_item{
     width: 94%;
     margin: 5px 3px;
-    padding: 6px 10px;
+    padding: 10px 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

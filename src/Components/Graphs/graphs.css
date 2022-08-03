@@ -27,7 +27,7 @@
     color: rgb(160, 131, 1);
 }
 .active_filter{
-    color: rgb(160, 131, 1);
+    color: rgb(160, 131, 1) !important;
 }
 .graph{
     margin-top: 20px;
