@@ -1,0 +1,44 @@
+.tx_container{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 29px 0px !important;
+    padding: 10px;
+    height: 75vh;
+}
+.bar_container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.expense_div{
+    width: 180px;
+    margin: 2px 3px;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 29px 0px !important;
+}
+.expense_div p{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.expense_div div{
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.expense_div div{
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.expense{
+    color: rgb(179, 4, 4);
+}
+.income{
+    color: rgb(0, 129, 0);
+}
+.balance{
+    color: black;
+}
