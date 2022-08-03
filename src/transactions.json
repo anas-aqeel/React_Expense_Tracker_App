@@ -1,0 +1,34 @@
+{
+    "1": {
+        "name": "vegetables",
+        "amount": "-170"
+    },
+    "2": {
+        "name": "market",
+        "amount": "-17"
+    },
+    "3": {
+        "name": "salary",
+        "amount": "670"
+    },
+    "4": {
+        "name": "rent",
+        "amount": "-70"
+    },
+    "5": {
+        "name": "office",
+        "amount": "-40"
+    },
+    "6": {
+        "name": "freelancing",
+        "amount": "173"
+    },
+    "7": {
+        "name": "fruits",
+        "amount": "137"
+    },
+    "8": {
+        "name": "Medicines",
+        "amount": "32"
+    }
+}

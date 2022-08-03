@@ -1,0 +1,12 @@
+.tx_logs_div {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 29px 0px !important;
+    padding: 10px;
+    height: 75vh;
+}
+
+.logs_heading {
+    text-align: center;
+    font-weight: bold !important;
+    font-size: 23px !important;
+    text-shadow: 8px 7px 6px rgba(0, 0, 0, 0.2);
+}

@@ -1,6 +1,7 @@
 import React from 'react'
-import './txContainer.css'
 import Bars from './Bars';
+import Graphs from '../Graphs/Graphs';
+import './txContainer.css'
 const TxContainer = () => {
   return (
 
@@ -10,6 +11,7 @@ const TxContainer = () => {
         <Bars title='Income' value='234$' cls='income' />
         <Bars title='Balance' value='34$' cls='balance' />
       </div>
+    <Graphs/>
     </div>
   )
 }
