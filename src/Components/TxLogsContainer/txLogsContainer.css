@@ -7,13 +7,14 @@
 .logs_heading {
     color: rgb(211, 211, 211);
     text-align: center;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold !important;
     font-size: 23px !important;
     text-shadow: 8px 7px 6px rgba(0, 0, 0, 0.2);
 }
 .tx_log_div{
     padding: 10px 5px;
-    max-height: 375px;
+    max-height: 400px;
     overflow-x: hidden;
     overflow-y: auto;
 }

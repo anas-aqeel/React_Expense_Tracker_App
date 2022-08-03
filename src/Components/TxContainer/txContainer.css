@@ -6,6 +6,7 @@
 .bar_container{
     display: flex;
     justify-self: center;
+    font-family: 'Roboto', sans-serif;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
