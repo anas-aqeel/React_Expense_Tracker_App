@@ -1,42 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './txLogsContainer.css';
-import data from '../../transactions.json';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import { MyContext } from '../../Contex/TxContex';
+
 
 
 
 
 const Transactions = () => {
+  let {transactions} = useContext(MyContext)
+  // console.log(transactions)
   return (
     <div className='tx_log_div'>
-      {[12, 2].map((e) =>
+      {transactions.map((e) =>
        (
-        <div key={e}>
           <Tx_Item
-            title='Market'
-            desc='Hi I am Going To Market as a in as a'
-            val={100}
-            _class='expense'
+            key={1}
+            title={e.title}
+            desc={e.desc}
+            val={e.value}
+            _class={e.type.toLowerCase()}
           />
-          <Tx_Item
-            title='Salary'
-            desc='Hi I am getting my first salary'
-            val={1800}
-            _class='income'
-          />
-          <Tx_Item
-            title='Vegetables'
-            desc='Hi I am Going to buy some vegetables'
-            val={233}
-            _class='expense'
-          /> <Tx_Item
-            title='Gift'
-            desc='Hi I am having a gift'
-            val={1200}
-            _class='income'
-          />
-        </div>
-
       ) 
       )}
     </div>
