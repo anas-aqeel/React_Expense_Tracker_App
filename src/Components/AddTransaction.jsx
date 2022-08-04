@@ -70,7 +70,8 @@ const TxModal = () => {
             title: title[1],
             desc: desc[1],
             value: value[1],
-            type: type[1]
+            type: type[1],
+            time: new Date()
           }
         })
     }

@@ -12,13 +12,7 @@ export let MyContext = createContext(initialState);
 
 const GlobalContext = ({ children }) => {
 
-  let [state, dispatch] = useReducer(AppReducer, initialState)
-  function AddTransaction(tx) {
-    dispatch({
-      type: 'ADD_TRANSACTION',
-      payload: tx
-    })
-  }
+let [state, dispatch] = useReducer(AppReducer, initialState)
 
   return (
     <MyContext.Provider
