@@ -5,8 +5,50 @@
 }
 
 .logs_heading {
+    color: rgb(211, 211, 211);
     text-align: center;
     font-weight: bold !important;
     font-size: 23px !important;
     text-shadow: 8px 7px 6px rgba(0, 0, 0, 0.2);
+}
+.tx_log_div{
+    padding: 10px 5px;
+    max-height: 375px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.tx_item{
+    width: 94%;
+    margin: 5px 3px;
+    padding: 6px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 29px 0px !important;
+}
+.tx_item p{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tx_item div{
+    width: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.tx_item div p{
+    margin-left: 5px;
+}
+.tx_logs_desc{
+    align-self: center;
+    justify-self: flex-start !important;
+    color: rgb(82, 82, 82);
+    font-size: 11px !important;
+}
+.expense{
+    color: rgb(129, 2, 2);
+}
+.income{
+    color: rgb(0, 100, 0);
 }

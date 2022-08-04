@@ -1,8 +1,10 @@
 .navBar{
+    background-color: transparent !important;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 29px 0px !important;
     margin-bottom: 20px !important;
 }
 .heading{
     font-weight: bold !important;
     font-size: 18px !important;
+    color: rgb(240, 240, 240) !important;
 }

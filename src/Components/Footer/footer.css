@@ -1,5 +1,5 @@
 .footer{
-    background-color: #f7f7f7 !important;
+    background-color: rgb(0, 0, 0) !important;
     height: 35px;
     width: 100vw;
     display: flex;
@@ -13,4 +13,5 @@
 }
 .footer-heading{
     font-weight: bold;
+    color: rgb(211, 211, 211);
 }

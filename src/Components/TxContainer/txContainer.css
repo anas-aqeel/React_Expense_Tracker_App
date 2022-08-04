@@ -5,11 +5,12 @@
 }
 .bar_container{
     display: flex;
+    justify-self: center;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
 .expense_div{
-    width: 180px;
+    width: 195px;
     margin: 2px 3px;
     padding: 6px 10px;
     display: flex;
@@ -34,11 +35,11 @@
     align-items: center;
 }
 .expense{
-    color: rgb(179, 4, 4);
+    color: rgb(216, 11, 11);
 }
 .income{
-    color: rgb(0, 129, 0);
+    color: rgb(7, 194, 7);
 }
 .balance{
-    color: black;
+    color: rgb(211, 211, 211);
 }

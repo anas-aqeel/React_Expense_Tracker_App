@@ -57,9 +57,7 @@ const data = {
 
 const Graph = () => {
     return (
-        <div className='graph'>
-            <Line options={options} data={data} />
-        </div>
+        <Line className='graph'  options={options} data={data} />
     )
 }
 
