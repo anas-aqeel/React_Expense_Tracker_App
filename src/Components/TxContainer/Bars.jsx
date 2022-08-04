@@ -10,7 +10,7 @@ const Bars = ({ title, value, cls }) => {
                 <p>{title}</p>
                 <LocalAtmIcon className={cls} />
             </div>
-            <p>{value}</p>
+            <p>{value}$</p>
         </div>
     )
 }

@@ -49,32 +49,29 @@ export default function AddTransaction() {
 }
 
 const TxModal = () => {
-
-
-  const {AddTransaction} = useContext(MyContext);
+  const { dispatch } = useContext(MyContext);
   const [title, setTitle] = useState([false, '']);
   const [desc, setDesc] = useState([false, '']);
   const [value, setValue] = useState([false, 0]);
   const [type, setType] = useState([false, '']);
 
-
-
-
   const handleSumbit = () => {
 
-
-    if (title[1] == '' ) setTitle([true, '']);
-    else if(desc[1] == '' ) setDesc([true, '']);
-    else if(value[1] == 0) setValue([true, 0]);
-    else if(type[1] == '' )setType([true, '']);
-
+    if (title[1] == '') setTitle([true, '']);
+    else if (desc[1] == '') setDesc([true, '']);
+    else if (value[1] == 0) setValue([true, 0]);
+    else if (type[1] == '') setType([true, '']);
 
     else if (!title[0] && !desc[0] && !value[0] && !type[0]) {
-      AddTransaction({
-          title: title[1],
-          desc: desc[1],
-          value: value[1],
-          type: type[1]
+      dispatch(
+        {
+          type: 'ADD_TRANSACTION',
+          payload: {
+            title: title[1],
+            desc: desc[1],
+            value: value[1],
+            type: type[1]
+          }
         })
     }
   }
@@ -99,11 +96,12 @@ const TxModal = () => {
         }}>
         <TextField
           error={title[0]}
-         
+
           required={true}
           size="small"
           id="outlined-basic"
           label="Title"
+          
           variant="outlined"
           onChange={(e) => setTitle([e.target.value == '', e.target.value])}
         />

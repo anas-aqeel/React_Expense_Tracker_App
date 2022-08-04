@@ -8,11 +8,11 @@ import { MyContext } from '../../Contex/TxContex';
 
 
 const Transactions = () => {
-  let {transactions} = useContext(MyContext)
-  // console.log(transactions)
+  let {state} = useContext(MyContext)
+  
   return (
     <div className='tx_log_div'>
-      {transactions.map((e) =>
+      {state.transactions.map((e) =>
        (
           <Tx_Item
             key={1}
@@ -37,7 +37,7 @@ export const Tx_Item = ({ title, desc, val, _class }) => {
         <p>{title}</p>
       </div>
       <p className='tx_logs_desc'>{desc}</p>
-      <p>{val}$</p>
+      <p>{val} $</p>
     </div>
   )
 }
