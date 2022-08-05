@@ -25,7 +25,6 @@ ChartJS.register(
 
 
 const Graph = ({ labels, _data }) => {
-    console.log(_data)
     const options = {
         responsive: true,
         plugins: {

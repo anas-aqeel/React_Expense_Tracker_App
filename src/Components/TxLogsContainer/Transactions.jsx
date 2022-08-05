@@ -15,7 +15,7 @@ const Transactions = () => {
       {state.transactions.map((e) =>
        (
           <Tx_Item
-            key={1}
+            key={e}
             title={e.title}
             desc={e.desc}
             val={e.value}

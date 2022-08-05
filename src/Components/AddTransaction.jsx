@@ -62,7 +62,7 @@ const TxModal = () => {
     else if (value[1] == 0) setValue([true, 0]);
     else if (type[1] == '') setType([true, '']);
 
-    else if (!title[0] && !desc[0] && !value[0] && !type[0]) {
+    else if (title[0] && desc[0] && value[0] && !type[0]) {
       dispatch(
         {
           type: 'ADD_TRANSACTION',
@@ -96,25 +96,31 @@ const TxModal = () => {
           marginBottom: '15px'
         }}>
         <TextField
-          error={title[0]}
+          error={!title[0]}
 
           required={true}
           size="small"
           id="outlined-basic"
           label="Title"
-          
+
           variant="outlined"
-          onChange={(e) => setTitle([e.target.value == '', e.target.value])}
+          onChange={(e) => setTitle([
+            e.target.value != '' && e.target.value.split('').length < 15,
+            e.target.value
+          ])}
         />
         <TextField
-          error={value[0]}
+          error={!value[0]}
           required={true}
           size="small"
           id="outlined-basic"
           type={'number'}
           label="Value"
           variant="outlined"
-          onChange={(e) => setValue([e.target.value == 0, parseInt(e.target.value)])}
+          onChange={(e) => setValue([
+            (e.target.value > 0 && e.target.value < 9999999),
+            parseInt(e.target.value)
+          ])}
         />
       </Box>
       <TextField fullWidth={true}
@@ -123,8 +129,11 @@ const TxModal = () => {
         id="outlined-basic"
         label="Description"
         variant="outlined"
-        onChange={(e) => setDesc([e.target.value == '', e.target.value])}
-        error={desc[0]}
+        onChange={(e) => setDesc([
+          e.target.value != '' && e.target.value.split('').length < 70,
+          e.target.value
+        ])}
+        error={!desc[0]}
         required={true}
       />
       <TextField
