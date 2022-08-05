@@ -83,13 +83,20 @@ export const dailyFilter = (transactions) => {
         let Income = 0;
         let Expense = 0;
 
+
         transactions.map((e) => {
 
             let formatDate = formatAMPM(e.time);
             let hours = formatDate.split(':')[0]
             let amPm = formatDate.split(':')[1]
-
-            if (amPm == _amPm && ((hours < _hours) && (hours > labels_1[i - 1].split(':')[0]))) {
+            console.log(console.log(
+                e.time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
+              ) )
+            if (
+                amPm == _amPm
+                && ((hours < _hours) &&
+                    i != 0 ? (hours > labels_1[i - 1]?.split(':')[0]) : true)
+            ) {
                 if (e.type == 'Income') {
                     Income += e.value;
                 } else {
