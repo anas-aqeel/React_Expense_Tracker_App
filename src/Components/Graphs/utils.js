@@ -89,9 +89,6 @@ export const dailyFilter = (transactions) => {
             let formatDate = formatAMPM(e.time);
             let hours = formatDate.split(':')[0]
             let amPm = formatDate.split(':')[1]
-            console.log(console.log(
-                e.time.toLocaleString('en-US', { hour: 'numeric', hour12: true })
-              ) )
             if (
                 amPm == _amPm
                 && ((hours < _hours) &&

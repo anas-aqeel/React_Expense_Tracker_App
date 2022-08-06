@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import { MyContext } from '../Contex/TxContex'
 import { Box, Modal, Fab, TextField, Button, MenuItem } from '@mui/material';
+import { AddTxItem } from '../firebase/utils';
 
 const style = {
   position: 'absolute',
@@ -13,11 +14,11 @@ const style = {
   boxShadow: 'rgba(100, 100, 111, 0.3) 0px 4px 29px 0px',
   p: 2,
 };
-
+let handleClose;
 export default function AddTransaction() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  handleClose = () => setOpen(false);
 
   return (
     <div>
@@ -70,10 +71,18 @@ const TxModal = () => {
             title: title[1],
             desc: desc[1],
             value: value[1],
-            type: type[1],
-            time: new Date()
+            time: new Date(),
+            type: type[1]
           }
         })
+      AddTxItem(
+        title[1],
+        desc[1],
+        value[1],
+        new Date(),
+        type[1]
+      )
+      handleClose()
     }
   }
 

@@ -23,10 +23,12 @@
     width: 94%;
     margin: 5px 3px;
     padding: 10px 10px;
+    padding-top: 18px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 4px 29px 0px !important;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
 }
 .tx_data{
     width: 100% !important;
@@ -73,4 +75,49 @@
 }
 .income{
     color: rgb(0, 100, 0);
+}
+.action_item{
+    display: flex;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    padding-left: 10px;
+    width: 90px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+}
+.action_item p{
+    font-family: 'Roboto';
+    font-size: 12px;
+    margin-left: 8px;
+    color: rgb(177, 177, 177);
+}
+.delete{
+    color: rgb(112, 0, 0);
+}
+.update{
+    color: rgb(129, 129, 0);
+}
+.action_active{
+    background-color: rgb(10, 10, 10);
+}
+.actions{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+.visible{
+    display: block
+}
+.hide{
+    display: none
+}
+.action-button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
 }
