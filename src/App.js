@@ -3,6 +3,7 @@ import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar"
 import Container from "./Components/Container/Container";
 import GlobalContext from "./Contex/TxContex";
+import {app} from './firebase/config'
 import './index.css'
 
 function App() {
