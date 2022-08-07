@@ -12,7 +12,7 @@ Expense Tracker App
      Delete
     
     Live Demo 👇👇
-    https://github.com/Anas-Aqeel/React_Expense_Tracker_App/
+    https://62efd5280e3e5c215f8b12a2--super-cool-site-by-anas-aqeel.netlify.app/
     
 <img align="center" height="500px" width="950px" alt="𝙶𝙸𝙵" src="https://github.com/Anas-Aqeel/React_Expense_Tracker_App/blob/Master/Screenshot%20(4).png"/>
     
