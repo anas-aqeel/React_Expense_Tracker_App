@@ -30,7 +30,8 @@ export function AddTxItem(_title, _decs, _value, _time, _type) {
 
 
 export function UpdateTxItem(TxId, _title, _decs, _value, _time, _type) {
-  update(ref(database, 'transactions/' + TxId), {
+  console.log(TxId)
+  update(ref(database, `transactions/${TxId}` ), {
     title: _title,
     desc: _decs,
     value: _value,

@@ -1,3 +1,4 @@
+import moment from "moment";
 export const labels_1 = [
     '12:00 am',
     '3:00 am',
@@ -9,13 +10,13 @@ export const labels_1 = [
     '9:00 pm'
 ];
 export const labels_2 = [
+    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
     'Saturday',
-    'Sunday'
 ];
 export const labels_3 = [
     'January',
@@ -33,6 +34,7 @@ export const labels_3 = [
 ];
 
 export const weeklyFilter = (transactions) => {
+    
     return labels_2.map((a, b) => {
         let dayInc = 0;
         let dayExp = 0;
@@ -90,7 +92,7 @@ export const dailyFilter = (transactions) => {
             let hours = formatDate.split(':')[0]
             let amPm = formatDate.split(':')[1]
             if (
-                amPm == _amPm
+                amPm != _amPm
                 && ((hours < _hours) &&
                     i != 0 ? (hours > labels_1[i - 1]?.split(':')[0]) : true)
             ) {

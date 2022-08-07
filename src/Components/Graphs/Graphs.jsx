@@ -1,4 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
+import moment from "moment";
+
 import Graph from './Graph'
 import {
   labels_1,
@@ -45,7 +47,8 @@ const Graphs = () => {
         <button
           className={labels[0] == labels_2[0] ? 'active_filter' : ''}
           onClick={() => {
-            setLabels(labels_2.filter((e, i) => i < (new Date().getDay() + 1)));
+            
+            setLabels( labels_2 );
             setData(_weeklyData)
           }}>
           Weekly
