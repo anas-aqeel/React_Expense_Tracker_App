@@ -30,3 +30,11 @@ Expense Tracker App
     
   Backend
     Firebase
+
+
+
+<div align="center">
+
+### 𝚂𝚑𝚘𝚠 𝚜𝚘𝚖𝚎 ❤️ 𝚋𝚢 giving 𝚜𝚝𝚊𝚛 to this 𝚛𝚎𝚙𝚘!
+
+</div>
