@@ -1,6 +1,6 @@
 Expense Tracker App
 
-<img align="center" height="500px" width="950px" alt="𝙶𝙸𝙵" src="https://github.com/Anas-Aqeel/React_Expense_Tracker_App/blob/Master/Screenshot%20(3).png"/>
+<img align="center" alt="𝙶𝙸𝙵" src="https://github.com/Anas-Aqeel/React_Expense_Tracker_App/blob/gh-pages/Home.png"/>
 
 
 
@@ -11,25 +11,18 @@ Expense Tracker App
      Update
      Delete
     
-    Live Demo 👇👇
-    https://62efd5280e3e5c215f8b12a2--super-cool-site-by-anas-aqeel.netlify.app/
+    Static Site Live Demo 👇👇
+    https://62efe293c776bb2e8359efd3--dainty-licorice-ace25a.netlify.app/   
     
-<img align="center" height="500px" width="950px" alt="𝙶𝙸𝙵" src="https://github.com/Anas-Aqeel/React_Expense_Tracker_App/blob/Master/Screenshot%20(4).png"/>
+<img align="center" alt="𝙶𝙸𝙵" src="https://github.com/Anas-Aqeel/React_Expense_Tracker_App/blob/gh-pages/Add-Modal.png"/>
     
-  Hooks
-    useState
-    useEffect
-    useReducer
-    use Context
     
   Libraries  
    Material UI
    Chart.js
    React-Chartjs-2
-   Moment js
-    
-  Backend
-    Firebase
+
+ 
 
 
 
