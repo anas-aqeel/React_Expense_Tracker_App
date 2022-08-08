@@ -1,7 +1,5 @@
 import { Box, TextField, Button, MenuItem } from '@mui/material';
 
-
-
 const style = {
   position: 'absolute',
   top: '40%',
@@ -76,7 +74,7 @@ const TxModal = (
         variant="outlined"
         value={desc.value}
         onChange={(e) => setDesc({
-          error: e.target.value == '' || e.target.value.split('').length > 70,
+          error: e.target.value == '' || e.target.value.split('').length > 170,
           value: e.target.value
         })}
         error={desc.error}

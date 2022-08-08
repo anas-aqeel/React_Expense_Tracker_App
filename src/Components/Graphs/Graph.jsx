@@ -11,6 +11,7 @@ import {
 } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';
+import faker from 'faker';
 import './graphs.css'
 
 ChartJS.register(
@@ -24,7 +25,9 @@ ChartJS.register(
 );
 
 
-const Graph = ({ labels, _data }) => {
+const Graph = ({ labels }) => {
+
+
     const options = {
         responsive: true,
         plugins: {
@@ -38,13 +41,13 @@ const Graph = ({ labels, _data }) => {
         datasets: [
             {
                 label: 'Expense',
-                data: _data.map(({Expense}) => Expense),
+                data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
                 borderColor: 'rgb(255, 99, 132)',
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
             },
             {
                 label: 'Income',
-                data: _data.map(({Income}) => Income),
+                data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
                 borderColor: 'rgb(10, 51, 4)',
                 backgroundColor: 'rgba(31, 138, 17)',
             },

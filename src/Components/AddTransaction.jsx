@@ -1,8 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import EditIcon from '@mui/icons-material/Edit';
-import { MyContext } from '../Contex/TxContex'
 import { Modal, Fab } from '@mui/material';
-import { AddTxItem } from '../firebase/utils';
 import TxModal from './Modal/TxModal'
 
 let handleClose;
@@ -14,7 +12,6 @@ export default function AddTransaction() {
   const handleOpen = () => setOpen(true);
 
   handleClose = () => setOpen(false);
-  const { dispatch } = useContext(MyContext);
   const [title, setTitle] = useState({ error: false, value: '' });
   const [desc, setDesc] = useState({ error: false, value: '' });
   const [value, setValue] = useState({ error: false, value: 0 });
@@ -28,18 +25,6 @@ export default function AddTransaction() {
     else if (type.value == '') setType({ error: true, value: '' });
 
     else if (!title.error && !desc.error && !value.error && !type.error) {
-      dispatch(
-        {
-          type: 'ADD_TRANSACTION',
-          payload: {
-            title: title.value,
-            desc: desc.value,
-            value: value.value,
-            time: new Date(),
-            type: type.value
-          }
-        })
-      AddTxItem(title.value, desc.value, value.value, new Date(), type.value)
       handleClose()
       setTitle({ error: false, value: '' });
       setDesc({ error: false, value: '' });

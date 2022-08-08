@@ -1,12 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import './txLogsContainer.css';
 import LocalAtmIcon from '@mui/icons-material/LocalAtm';
-import { MyContext } from '../../Contex/TxContex';
-import { get, child, getDatabase, ref } from 'firebase/database';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/EditOutlined';
 import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
-import { DeleteTxItem, UpdateTxItem } from '../../firebase/utils';
 import { Modal } from '@mui/material';
 import TxModal from '../Modal/TxModal';
 
@@ -15,43 +12,41 @@ import TxModal from '../Modal/TxModal';
 
 const Transactions = () => {
 
-  let { state, dispatch } = useContext(MyContext)
-  useEffect(() => {
-    async function getData() {
-      const dbRef = ref(getDatabase());
-      let data = await get(child(dbRef, `transactions/`))
-      data = data.val();
-      if (data) {
-        let transactions = []
-        Object.keys(data).map((e) => {
-          transactions.push(data[e])
-        });
-        transactions.map((e) => {
-          dispatch({
-            type: 'ADD_TRANSACTION',
-            payload: { ...e, time: new Date(e.time) }
-          })
-        })
-      }
-    }
-    getData()
-  }, [])
 
   return (
     <div className='tx_log_div'>
-      {state.transactions.map((e, i) =>
+      {[1, 2].map((e, i) =>
       (
-        <Tx_Item
-          key={i}
-          _title={e.title}
-          _desc={e.desc}
-          _val={e.value}
-          time={e.time}
-          id={e.id}
-          index={i}
-          _type={e.type}
-          _class={e.type.toLowerCase()}
-        />
+        <>
+          <Tx_Item
+            key={i}
+            _title='Salary'
+            _desc='he essential difference between a salary and wages is that a salaried person is paid a fixed amount per pay period and a wage earner is paid by the hour.'
+            _val={154}
+            time={new Date()}
+            _type='Income'
+            _class='income'
+          />
+          <Tx_Item
+            key={i}
+            _title='Vegetables'
+            _desc='Vegetables are parts of plants that are consumed by humans or other animals as food.'
+            _val={4}
+            time={new Date()}
+            _type='Expense'
+            _class='expense'
+          />
+          <Tx_Item
+            key={i}
+            _title='Office'
+            _desc="An office is a space where an organization's employees perform administrative work"
+            _val={14}
+            time={new Date()}
+            _type='Income'
+            _class='income'
+          />
+        </>
+
       )
       )}
     </div>
@@ -60,16 +55,10 @@ const Transactions = () => {
 
 
 
-export const Tx_Item = ({ _title, _desc, _val, _class, time, id, _type, index }) => {
-  let _id = id;
-  // console.log({ _title, _desc, _val, _class, time, id, _type, index })
-  let { dispatch } = useContext(MyContext)
+export const Tx_Item = ({ _title, _desc, _val, _class, time, _type, }) => {
   const [display, setDisplay] = useState(false);
-
   const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true)
-  };
+  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [title, setTitle] = useState({ error: false, value: _title });
   const [desc, setDesc] = useState({ error: false, value: _desc });
@@ -81,22 +70,7 @@ export const Tx_Item = ({ _title, _desc, _val, _class, time, id, _type, index })
     else if (value.value == 0) setValue({ error: true, value: 0 });
     else if (type.value == '') setType({ error: true, value: '' });
     else if (!title.error && !desc.error && !value.error && !type.error) {
-
-      dispatch(
-        {
-          type: 'UPDATE_TRANSACTION',
-          index,
-          payload: {
-            title: title.value,
-            desc: desc.value,
-            value: value.value,
-            time,
-            type: type.value,
-          }
-        })
-      UpdateTxItem(_id, title.value, desc.value, value.value, time, type.value)
       handleClose()
-
     }
   }
 
@@ -120,11 +94,6 @@ export const Tx_Item = ({ _title, _desc, _val, _class, time, id, _type, index })
         </button>
         <button onClick={() => {
           setDisplay(false)
-          DeleteTxItem(id)
-          dispatch({
-            type: "DELETE_TRANSACTION",
-            payload: { id, type: type.value, value: value.value }
-          })
         }}
           className='action_item delete'>
           <DeleteOutlineOutlinedIcon fontSize='small' />
